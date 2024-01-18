@@ -7,11 +7,13 @@ app = Flask(__name__)
 @app.route("/")
 def main():
     return '''
-    Enter your name to get a greeting:
+    <h1>Welcome to the Greeting App</h1>
+    <p>Enter your name to get a greeting:</p>
      <form action="/echo_user_input" method="POST">
-         <input name="user_input" placeholder="Please enter name.">
-         <input type="submit" value="Submit!">
-     </form>
+        <label for="user_input">Name:</label>
+        <input type="text" id="user_input" name="user_input" placeholder="Please enter your name." required>
+        <button type="submit">Submit</button>
+    </form>
      '''
 @app.route("/echo_user_input", methods=["POST"])
 def echo_input():
