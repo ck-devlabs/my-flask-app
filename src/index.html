@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIN Decoder</title>
+</head>
+<body>
+    <h1>VIN Decoder</h1>
+    <form method="POST">
+        <label for="vin">Enter VIN:</label>
+        <input type="text" id="vin" name="vin" required>
+        <button type="submit">Decode</button>
+    </form>
+    {% if vehicle_info %}
+        <table>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Body</th>
+                <th>Year</th>
+            </tr>
+            <tr>
+                <td>{{ vehicle_info['Make'] }}</td>
+                <td>{{ vehicle_info['Model'] }}</td>
+                <td>{{ vehicle_info['Body'] }}</td>
+                <td>{{ vehicle_info['Year'] }}</td>
+            </tr>
+        </table>
+    {% endif %}
+</body>
+</html>
